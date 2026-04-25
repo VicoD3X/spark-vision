@@ -49,6 +49,19 @@ Le notebook principal suit les étapes suivantes :
 
 Le notebook contient également une étape exploratoire de réduction de dimension par PCA afin d'étudier les features générées.
 
+## Notebook et modules Python
+
+Le notebook reste la version exploratoire du projet. Il conserve la démarche complète, les validations intermédiaires et les captures utiles pour comprendre le passage du local vers AWS EMR.
+
+Le dossier `src/` contient une première extraction modulaire du pipeline :
+
+- `config.py` centralise les chemins locaux, la taille d'image MobileNetV2 et le nom de l'application Spark ;
+- `spark_session.py` crée la session Spark ;
+- `image_features.py` regroupe l'extraction du label, la préparation de MobileNetV2, le preprocessing et l'extraction de features ;
+- `pipeline.py` décrit le flux réutilisable : chargement des images, ajout des labels, extraction des features et sauvegarde Parquet.
+
+Cette extraction reste volontairement simple : le projet demeure un MVP, pas une refonte production-ready.
+
 ## Approche Computer Vision
 
 Le projet utilise MobileNetV2 en transfert learning.
@@ -118,6 +131,14 @@ spark-vision/
 |   `-- captures AWS, EMR, Spark et MobileNetV2
 |-- notebooks/
 |   `-- spark-vision-pipeline.ipynb
+|-- src/
+|   |-- config.py
+|   |-- image_features.py
+|   |-- pipeline.py
+|   `-- spark_session.py
+|-- tests/
+|   |-- test_config.py
+|   `-- test_image_features.py
 |-- requirements.txt
 `-- requirements-dev.txt
 ```
@@ -145,6 +166,15 @@ Le pipeline permet de valider :
 - l'exécution locale puis cloud sur AWS EMR.
 
 Le notebook montre également une première validation des dimensions de sortie et des visualisations exploratoires autour de la PCA.
+
+## Tests
+
+Les tests actuels restent volontairement légers. Ils vérifient la configuration des chemins et l'extraction des labels depuis des chemins locaux ou S3, sans lancer Spark ni charger TensorFlow.
+
+```bash
+pip install -r requirements-dev.txt
+pytest
+```
 
 ## Limites actuelles
 

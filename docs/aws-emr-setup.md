@@ -42,10 +42,12 @@ Le fichier `bootstrap-emr.sh` installe les dépendances Python nécessaires lors
 
 Il installe notamment :
 
+- `numpy` pour les calculs numériques ;
 - `pillow` pour manipuler les images ;
-- `pandas` et `numpy` pour les traitements tabulaires ;
+- `pandas` pour les traitements tabulaires ;
 - `pyarrow` pour le format Parquet ;
 - `boto3`, `s3fs` et `fsspec` pour l'accès aux ressources S3.
+- `tensorflow-cpu` pour exécuter MobileNetV2 sur un cluster CPU.
 
 Cette étape évite d'installer manuellement les dépendances sur chaque noeud après le démarrage du cluster.
 
