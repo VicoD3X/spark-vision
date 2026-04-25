@@ -1,0 +1,9 @@
+pyspark
+tensorflow
+pillow
+pandas
+numpy
+pyarrow
+boto3
+s3fs
+fsspec
