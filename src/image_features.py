@@ -21,8 +21,9 @@ def prepare_feature_extractor(model_weights: Optional[List[Any]] = None):
     from tensorflow.keras import Model
     from tensorflow.keras.applications.mobilenet_v2 import MobileNetV2
 
+    weights = None if model_weights is not None else "imagenet"
     base_model = MobileNetV2(
-        weights="imagenet",
+        weights=weights,
         include_top=True,
         input_shape=(*IMAGE_SIZE, 3),
     )

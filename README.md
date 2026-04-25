@@ -98,6 +98,14 @@ Les résultats locaux sont générés dans :
 data/Results/
 ```
 
+La version modulaire du pipeline peut être lancée avec :
+
+```bash
+python -m src.pipeline
+```
+
+Cette commande lance la version modulaire du pipeline, à condition que le dataset Fruits-360 soit présent dans le dossier attendu.
+
 Ces dossiers ne sont pas versionnés dans Git afin d'éviter de publier le dataset complet et les artefacts volumineux.
 
 ## Déploiement cloud AWS EMR
