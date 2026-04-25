@@ -1,0 +1,39 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environments
+.venv/
+venv/
+ENV/
+env/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# OS / IDE
+.DS_Store
+Thumbs.db
+.vscode/
+
+# Local secrets
+.env
+.env.*
+*.key
+*.pem
+
+# Large local datasets and generated results
+data/fruits-360_dataset/
+data/Results/
+
+# Spark / Hadoop local artifacts
+*.crc
+_SUCCESS
+metastore_db/
+spark-warehouse/
+
+# Logs and caches
+*.log
+.cache/
+.pytest_cache/
