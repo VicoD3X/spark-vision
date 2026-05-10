@@ -6,6 +6,7 @@
 ![Amazon S3](https://img.shields.io/badge/Amazon_S3-storage-569A31?logo=amazons3&logoColor=white)
 ![TensorFlow](https://img.shields.io/badge/TensorFlow-MobileNetV2-FF6F00?logo=tensorflow&logoColor=white)
 ![Status](https://img.shields.io/badge/Status-MVP-blue)
+[![CI](https://github.com/VicoD3X/spark-vision/actions/workflows/ci.yml/badge.svg)](https://github.com/VicoD3X/spark-vision/actions/workflows/ci.yml)
 
 ## Présentation du projet
 
@@ -200,8 +201,8 @@ Le notebook reste volontairement conservé comme support exploratoire et preuve 
 
 Les prochaines étapes naturelles seraient :
 
-- isoler le code du notebook dans des scripts Python réutilisables ;
-- ajouter une configuration centralisée des chemins locaux et S3 ;
+- enrichir la version modulaire avec davantage de paramètres d'exécution ;
+- ajouter une configuration S3 plus complète pour les chemins cloud ;
 - entraîner un modèle de classification à partir des features extraites ;
 - comparer plusieurs modèles pré-entraînés ;
 - suivre les métriques d'exécution Spark et les coûts EMR ;
@@ -209,6 +210,4 @@ Les prochaines étapes naturelles seraient :
 
 ## Contexte du projet
 
-Ce projet a été initialement développé dans le cadre d'un parcours professionnalisant en Data Science.
-
-Il est présenté ici comme un MVP technique : une première pipeline distribuée de traitement d'images, structurée autour de PySpark, MobileNetV2, AWS EMR et Amazon S3.
+Ce projet est présenté comme un MVP technique : une première pipeline distribuée de traitement d'images, structurée autour de PySpark, MobileNetV2, AWS EMR et Amazon S3.
